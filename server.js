@@ -3,8 +3,14 @@ const express = require("express")
 const mongoose = require("mongoose");
 const app = express()
 
-app.get("/", (req, res) => {
-    res.send("hello world")
+
+app.get("/", async (req, res) => {
+  try { 
+    const todos = await todos.find({});
+    res.status(200).json(product);
+  } catch {
+    
+  }
 })
 
 app.post("/", (req, res) => {
