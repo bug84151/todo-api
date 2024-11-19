@@ -4,12 +4,14 @@ const mongoose = require("mongoose");
 const app = express()
 
 
+
+
 app.get("/", async (req, res) => {
   try { 
     const todos = await todos.find({});
-    res.status(200).json(product);
-  } catch {
-    
+    res.status(200).json(todo);
+  } catch (err){
+    res.status(500).json({message:err.message})
   }
 })
 
